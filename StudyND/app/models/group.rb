@@ -7,8 +7,16 @@ class Group < ActiveRecord::Base
   validates :name, presence: true
   validates :name, uniqueness: true
 
+  validate :group_name_to_short
+
   def to_s
     name
+  end
+
+  def group_name_to_short
+    if name.length < 3
+      errors.add(:name, 'is way too short.')
+    end
   end
 
 end
