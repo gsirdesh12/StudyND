@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
+  before_action :require_login, only: [:index, :edit, :edit, :update, :destroy]
+  before_action :require_logged_out, only: [:new, :create]
 
   # GET /users
   # GET /users.json
@@ -29,7 +31,8 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+	flash[:message] = "User was successfully created. Please log in."
+        format.html { redirect_to login_path, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -72,4 +75,18 @@ class UsersController < ApplicationController
     def user_params
       params.require(:user).permit(:first_name, :last_name, :email, :password, :grade)
     end
+
+   def require_login
+     unless session[:user_id]
+       flash[:message] = "You must be logged in to view this."
+       redirect_to login_path
+     end
+   end
+
+  def require_logged_out
+    if session[:used_id].nil?
+      flash[:message] = "You cannot create a new account while logged in."
+      redirect_to home_path
+    end
+  end
 end

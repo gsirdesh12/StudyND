@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   validates :first_name, :last_name, :email, :password, :grade, presence: true
   validates :grade, inclusion: { in: 1..4, message:  "\"%{value}\" must be between 1 and 4: 1 is First-Year, 2 is Sophomore, etc." }
+  validates :email, uniqueness:true
 
   # scopes
   scope :alphabetical, -> { order(:last_name, :first_name) }

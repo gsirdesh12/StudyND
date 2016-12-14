@@ -28,6 +28,7 @@ class GroupsController < ProtectedController
 
     respond_to do |format|
       if @group.save
+	flash[:message] = "You must still enroll in group if you wish to participate." 
         format.html { redirect_to @group, notice: 'Group was successfully created.' }
         format.json { render :show, status: :created, location: @group }
       else
