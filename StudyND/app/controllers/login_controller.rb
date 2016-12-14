@@ -1,6 +1,5 @@
-class LoginControllerController < ApplicationController
+class LoginController < ApplicationController
   def index
-
   end
 
   def authenticate
