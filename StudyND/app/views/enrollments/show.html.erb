@@ -10,5 +10,10 @@
   <%= @enrollment.year %>
 </p>
 
+<p>
+  <strong>User:</strong>
+  <%= @enrollment.group_id %>
+</p>
+
 <%= link_to 'Edit', edit_enrollment_path(@enrollment) %> |
 <%= link_to 'Back', enrollments_path %>

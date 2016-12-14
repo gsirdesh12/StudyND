@@ -1,4 +1,85 @@
+<<<<<<< HEAD
 #header h1 {color: #aaa; font-size: 2em; padding: 20px 0 0 20px; font-weight: 100;}
 #footer { clear: both; color: #fff; background: #222; text-align: left; margin: 20px 0px 0px 0px; padding: 25px 20px; font-size: .9em; ; border-radius:  0px 0px 10px 10px}
 #footer a { color : #aaa; text-decoration: none; }
 .right {float: right; position: relative; top: -10px;}
+=======
+#footer { 
+	clear: both;
+	color: #fff;
+	background: #1B2848;
+	text-align: left;
+	margin: 20px 0px 0px 0px;
+	padding: 25px 20px;
+	font-size: .9em;
+	border-radius:  0px 0px 10px 10px
+}
+.right {float: right}
+header { height: 90px; background: #1B2848; margin: 20px 0px 10px 0px; border-radius: 10px 10px 0 0; line-height: 90px;}
+#sidebar {
+	width: 210px;
+	float: right;
+	color: #fff;
+	margin-right: 15px;
+	margin-top: 30px;
+	margin-bottom: 10px;
+	background-color: #D2584D;
+	border-radius:
+	8px; min-height: 140px;
+}
+img { 
+	padding: 5px 20px 10px 10px;
+	float: right;
+ }
+#title { 
+	display: inline;
+	font-size: 4em;
+	padding: 0 0 0 15px;
+}
+#title a {
+	text-decoration: none;
+	color: #D8756F;
+}
+#footer div {
+	display:inline;
+}
+#slogan {
+	float: left;
+	width: 33%;
+}
+#copyright {
+	float: right;
+	width: 33%;
+}
+#date {
+	margin: 0 auto;
+}
+#copyright p {
+	text-align: right;
+}
+#date p {
+	text-align: center;
+}
+#sidebar a {
+	color: white;
+}
+.padding h2 {
+	margin-left: .83em;
+}
+#main {
+	margin-left: 15px;
+	color: #1B2848;
+}
+#all-container {
+	background: #ADD1C3;
+	border-radius: 8px;
+}
+#flash {
+	padding-left: 15px;
+	text-align: center;
+	color: #1B2848;
+}
+.button {
+	color: #ADD1C3;
+}
+>>>>>>> 47b52a019d8b67df3cf71e537ceaef6625a86222

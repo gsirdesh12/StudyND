@@ -1,3 +1,13 @@
 <h1>Welcome, <%=@user.first_name%>!</h1>
-You belong to NUMBER study groups.
-They are listed below:
+You belong to <%= @groups.count%> study groups.
+
+<% if @groups.any? %>
+  <p> They are listed below: </p>
+  <ol>
+      <% @groups.each do |group| %>
+          <li><%= group.name %></li>
+      <% end %>
+  </ol>
+<% else %>
+  <p>No groups to display</p>
+<% end %>

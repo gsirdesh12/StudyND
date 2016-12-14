@@ -1,15 +1,17 @@
 <div id="footer">
-  <p>
-    Let's Study.
-  </p>
-  <div class="right">
+  <div id="slogan">
+    <p>
+      Let's Study.
+    </p>
+  </div>
+  <div id="copyright">
     <p>
       Copyright 2016.
     </p>
-    <!--<% if session[:user_id] %>
-      <%= link_to "Logout", logout_path %>
-    <% else %>
-      <%= link_to "Login", login_path %>
-    <% end %>-->
+  </div>
+  <div id="date">
+    <p>
+      <%= DateTime.now.strftime("%d %B %Y") %>
+    </p>
   </div>
 </div>
