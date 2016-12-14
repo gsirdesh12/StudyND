@@ -7,18 +7,16 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <%= render 'layouts/sidebar' %>
-  <%= yield %>
 
-<div id="footer">
-  <p>I am a footer</p>
-  <div class="right">
-    <% if session[:user_id] %>
-      <%= link_to "Logout", logout_path %>
-    <% else %>
-      <%= link_to "Login", login_path %>
-    <% end %>
-  </div>
-</div>
+<header><h1><%= link_to "StudyND", home_path%></h1></header>
+
+<main>
+   <%= render 'layouts/sidebar' %>
+
+ <%= yield %>
+</main>
+
+<%= render 'layouts/footer' %>
+
 </body>
 </html>
