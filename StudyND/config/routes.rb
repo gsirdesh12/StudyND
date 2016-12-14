@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ratings
   get 'login' => 'login#index', as: :login
   post 'login' => 'login#authenticate', as: :authenticate
   get 'logout' => 'login#logout', as: :logout
@@ -6,7 +7,6 @@ Rails.application.routes.draw do
   root 'home#index'
 
   resources :enrollments
-  resources :ratings
   resources :courses
   resources :groups
   resources :users
