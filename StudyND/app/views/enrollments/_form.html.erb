@@ -19,10 +19,16 @@
     <%= f.label :year %><br>
     <%= f.number_field :year %>
   </div>
-  <div>
+  <div class="field">
     <%= f.label :group_id %><br>
     <%= f.collection_select :group_id, Group.all, :id, :name, prompt: true %>
   </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.collection_select :user_id, User.all, :id, :first_name, prompt: true %>
+  </div>
+
+
   <div class="actions">
     <%= f.submit %>
   </div>
