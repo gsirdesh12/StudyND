@@ -1,4 +1,4 @@
-class GroupsController < ApplicationController
+class GroupsController < ProtectedController
   before_action :set_group, only: [:show, :edit, :update, :destroy]
 
   # GET /groups
