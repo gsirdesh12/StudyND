@@ -15,6 +15,7 @@ class EnrollmentsController < ProtectedController
   # GET /enrollments/new
   def new
     @enrollment = Enrollment.new
+    @user = User.find_by id: session[:user_id]
   end
 
   # GET /enrollments/1/edit

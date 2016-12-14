@@ -4,7 +4,7 @@
     <div class="box">
     <ul>
       <li>
-        <%= link_to 'Join new study group', courses_path, class: 'sidebar-item' %>
+        <%= link_to 'Join new study group', new_enrollment_path(user_id: 1), class: 'sidebar-item' %>
       </li>
       <li>
         <%= link_to 'Start new study group', new_group_path %>
@@ -16,7 +16,7 @@
         <%= link_to 'View all study groups', groups_path %>
       </li>
       <li>
-        <%= link_to 'Update profile', users_path %>
+        <%= link_to 'Update profile', edit_user_path(1) %>
       </li>
       <li>
       <% if session[:user_id] %>

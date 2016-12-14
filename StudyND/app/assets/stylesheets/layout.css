@@ -60,12 +60,19 @@ img {
 .padding h2 {
 	margin-left: .83em;
 }
-
 #main {
 	margin-left: 15px;
+	color: #1B2848;
 }
-
 #all-container {
 	background: #ADD1C3;
 	border-radius: 8px;
+}
+#flash {
+	padding-left: 15px;
+	text-align: center;
+	color: #1B2848;
+}
+.button {
+	color: #ADD1C3;
 }
