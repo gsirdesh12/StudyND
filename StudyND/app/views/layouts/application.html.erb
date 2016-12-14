@@ -7,15 +7,20 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+<div id="all-container">
 <%= render 'layouts/header' %>
 
-<main>
+<% if flash[:message] %>
+	  <div>
+	    <p><%= flash[:message] %></p>
+	  </div>
+	<% end  %>
    <%= render 'layouts/sidebar' %>
-
+<div id="main">
  <%= yield %>
-</main>
+</div>
 
 <%= render 'layouts/footer' %>
-
+</div>
 </body>
 </html>
