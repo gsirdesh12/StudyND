@@ -13,6 +13,8 @@ class Group < ActiveRecord::Base
     name
   end
 
+  private
+  
   def group_name_to_short
     if name.length < 3
       errors.add(:name, 'is way too short.')
