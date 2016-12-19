@@ -84,6 +84,7 @@ class UsersController < ApplicationController
    end
 
   def require_logged_out
+    # good idea but this was not allowing a user to be created...
     puts "require logout: #{session[:used_id]}"
     if session[:used_id].nil?
       flash[:message] = "You cannot create a new account while logged in."
