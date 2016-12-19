@@ -1,8 +1,9 @@
 class ProtectedController < ApplicationController
-  before_action :require_login
-  before_action :set_active_user
+  before_action :require_login, except: [:new, :create]
+  before_action :set_active_user, except: [:new, :create]
 
   def require_login
+    puts ":: requiring login"
     unless session[:user_id]
       flash[:message] = "You must be logged in to view this."
       redirect_to login_path

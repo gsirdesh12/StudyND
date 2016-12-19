@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_login, only: [:index, :edit, :edit, :update, :destroy]
+  before_action :require_login, only: [:index, :edit, :update, :destroy] #dupes
   before_action :require_logged_out, only: [:new, :create]
-
+  # jarp user#new should not require_login cuz then you can't create a new user///
   # GET /users
   # GET /users.json
   def index
@@ -84,9 +84,10 @@ class UsersController < ApplicationController
    end
 
   def require_logged_out
+    puts "require logout: #{session[:used_id]}"
     if session[:used_id].nil?
       flash[:message] = "You cannot create a new account while logged in."
-      redirect_to home_path
+      #redirect_to home_path
     end
   end
 end

@@ -1,7 +1,9 @@
 class Group < ActiveRecord::Base
   belongs_to :course
-  has_many :users, through: :enrollments
+  # jarp: nitpick, but.. the through assoc should be after the primary assoc
   has_many :enrollments, dependent: :destroy
+  has_many :users, through: :enrollments
+
   has_many :ratings
 
   validates :name, presence: true
@@ -14,7 +16,7 @@ class Group < ActiveRecord::Base
   end
 
   private
-  
+
   def group_name_to_short
     if name.length < 3
       errors.add(:name, 'is way too short.')

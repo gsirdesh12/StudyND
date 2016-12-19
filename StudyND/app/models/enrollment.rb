@@ -2,10 +2,10 @@ class Enrollment < ActiveRecord::Base
   belongs_to :group
   belongs_to :user
 
-  validates :term, :user_id, :year, :group_id, presence: true
+  validates :term, :user_id, :year, :group, presence: true
 
   validate :validate_year
-
+  # i like it!
   private
 
   def validate_year

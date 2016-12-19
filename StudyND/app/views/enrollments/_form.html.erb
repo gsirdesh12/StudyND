@@ -23,11 +23,8 @@
     <%= f.label :group_id %><br>
     <%= f.collection_select :group_id, Group.all, :id, :name, prompt: true %>
   </div>
-  <div class="field">
-    <%= f.label :user_id %><br>
-    <%= f.collection_select :user_id, User.all, :id, :first_name, prompt: true %>
-  </div>
-
+  <%# you should use current session to get user and set it in the controller %>
+  
 
   <div class="actions">
     <%= f.submit %>

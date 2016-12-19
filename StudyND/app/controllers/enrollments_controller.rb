@@ -26,7 +26,7 @@ class EnrollmentsController < ProtectedController
   # POST /enrollments.json
   def create
     @enrollment = Enrollment.new(enrollment_params)
-
+    @enrollment.user_id = session[:user_id]
     respond_to do |format|
       if @enrollment.save
         format.html { redirect_to @enrollment, notice: 'Enrollment was successfully created.' }
@@ -70,6 +70,7 @@ class EnrollmentsController < ProtectedController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def enrollment_params
-      params.require(:enrollment).permit(:term, :year)
+      # missing group id in permited params
+      params.require(:enrollment).permit(:term, :year, :group_id)
     end
 end

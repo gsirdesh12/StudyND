@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
 
   # scopes
   scope :alphabetical, -> { order(:last_name, :first_name) }
+  #jarp: not actually being used anywhere... so a typo is ok... :-/
   scope :by_ratin, -> { order("rating desc")}
 
   private
